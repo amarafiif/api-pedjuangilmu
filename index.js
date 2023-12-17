@@ -14,6 +14,13 @@ app.use(cors());
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(documentation));
 app.use("/api/v1", router);
 
+app.use("/", (req, res) => {
+	return res.status(200).json({
+		status: "success",
+		message: "Hellow World",
+	});
+});
+
 app.get("*", (req, res) => {
 	return res.status(404).json({
 		error: "Endpoint is not registered!",
@@ -21,5 +28,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-	console.log(`Server running at http://localhost:${port}`);
+	console.log(`Server running at PORT:${port}`);
 });
