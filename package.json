@@ -12,7 +12,7 @@
 		"start": "cross-env PORT=$PORT node index.js",
 		"prisma-generate": "prisma generate",
 		"migrate": "prisma migrate deploy",
-		"build": "npm run prisma-generate && npm run migrate && npm run start"
+		"build": "npm run prisma-generate && npm run migrate"
 	},
 	"keywords": [],
 	"author": "",
