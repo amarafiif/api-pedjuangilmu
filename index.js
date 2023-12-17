@@ -7,6 +7,8 @@ const express = require("express"),
 	documentation = require("./documentation/api.json");
 
 require("dotenv").config();
+
+app.use(express.json({ strict:false }))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
@@ -17,7 +19,7 @@ app.use("/api/v1", router);
 app.use("/", (req, res) => {
 	return res.status(200).json({
 		status: "success",
-		message: "Hellow World",
+		message: "Hello World! - PedjuangIlmu™",
 	});
 });
 
