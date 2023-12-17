@@ -3,10 +3,13 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"engines": {
+		"node": "^18.8.0"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "nodemon index.js",
-		"start": "node index.js",
+		"start": "cross-env PORT=$PORT node index.js",
 		"prisma-generate": "prisma generate",
 		"migrate": "prisma migrate deploy",
 		"build": "npm run prisma-generate && npm run migrate && npm run start"
@@ -31,5 +34,8 @@
 		"swagger-ui-express": "^5.0.0",
 		"vercel": "^32.7.2",
 		"xendit-node": "^4.0.0"
+	},
+	"devDependencies": {
+		"cross-env": "^7.0.3"
 	}
 }
