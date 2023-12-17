@@ -1,16 +1,21 @@
 {
-	"version": 2,
-	"builds": [
-		{
-			"src": "index.js",
-			"use": "@now/node"
-		}
-	],
-	"routes": [{ "src": "/(.*)", "dest": "index.js" }],
-	"env": {
-		"DATABASE_URL": "postgres://default:************@ep-frosty-fog-63334961.ap-southeast-1.postgres.vercel-storage.com:5432/verceldb"
-	},
-	"hooks": {
-		"postinstall": "prisma migrate deploy"
-	}
-}
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node",
+        "config": {
+            "run": {
+              "build": "npm install && npm run prisma-generate && npm run migrate"
+            }
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "index.js"
+      }
+    ]
+  }
+  
