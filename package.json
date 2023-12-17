@@ -7,10 +7,9 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "nodemon index.js",
 		"start": "node index.js",
-		"build": "npm run prisma-generate && npm run migrate && npm run start",
 		"prisma-generate": "prisma generate",
 		"migrate": "prisma migrate deploy",
-		"postbuild": "npm run prisma-generate"
+		"build": "npm run prisma-generate && npm run migrate && npm run start"
 	},
 	"keywords": [],
 	"author": "",
