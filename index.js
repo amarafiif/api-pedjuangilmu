@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(documentation));
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(documentation));
 app.use("/api/v1", router);
 
 app.get("*", (req, res) => {
