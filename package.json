@@ -9,7 +9,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "nodemon index.js",
-		"start": "cross-env PORT=$PORT node index.js",
+		"start": "vercel dev",
 		"prisma-generate": "prisma generate",
 		"migrate": "prisma migrate deploy",
 		"build": "npm run prisma-generate && npm run migrate"

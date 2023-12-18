@@ -8,7 +8,7 @@ const express = require("express"),
 
 require("dotenv").config();
 
-app.use(express.json({ strict:false }))
+app.use(express.json({ strict: false }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
@@ -32,3 +32,5 @@ app.get("*", (req, res) => {
 app.listen(port, () => {
 	console.log(`Server running at PORT:${port}`);
 });
+
+module.exports = app;
